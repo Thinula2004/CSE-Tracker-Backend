@@ -6,7 +6,6 @@ const router = Router();
 
 router.post(
   "/update",
-  authenticate,
   updateCurrentMarketPrices
 );
 
