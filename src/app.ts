@@ -7,6 +7,8 @@ import swaggerJsdoc from "swagger-jsdoc";
 import authRoutes from "./routes/authRoutes";
 import companyRoutes from "./routes/companyRoutes";
 import marketPriceRoutes from "./routes/marketPriceRoutes";
+import shareRoutes from "./routes/shareRoutes";
+import transactionRoutes from "./routes/transactionRoutes";
 
 const app = express();
 
@@ -32,5 +34,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use("/api/auth", authRoutes);
 app.use("/api/company", companyRoutes);
 app.use("/api/market", marketPriceRoutes);
+app.use("/api/share", shareRoutes);
+app.use("/api/transaction", transactionRoutes);
 
 export default app;

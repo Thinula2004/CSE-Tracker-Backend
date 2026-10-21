@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getMarketPricesByCompany, updateCurrentMarketPrices } from "../controllers/marketPriceController";
+import { getAllLatestMarketPrices, getLastMarketPriceByCompany, getMarketPricesByCompany, updateCurrentMarketPrices } from "../controllers/marketPriceController";
 import { authenticate } from "../services/Authenticator";
 
 const router = Router();
@@ -7,6 +7,18 @@ const router = Router();
 router.post(
   "/update",
   updateCurrentMarketPrices
+);
+
+router.get(
+  "/latest",
+  authenticate,
+  getAllLatestMarketPrices
+);
+
+router.get(
+  "/latest/:companyId",
+  authenticate,
+  getLastMarketPriceByCompany
 );
 
 router.get(
